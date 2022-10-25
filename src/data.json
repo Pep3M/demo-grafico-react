@@ -1,0 +1,30 @@
+{
+  "Ropa": {
+    "Pantalon": {
+      "brands": ["Pantalon1", "Pantalon2", "Pantalon3"],
+      "data": [20, 302, 200, 581]
+    },
+    "Camisa": {
+      "brands": ["Camisa1", "Camisa2", "Camisa3"],
+      "data": [300, 102, 642, 31]
+    },
+    "Calcetines": {
+      "brands": ["Calcetines1", "Calcetines2", "Calcetines3"],
+      "data": [400, 200, 150, 350]
+    }
+  },
+  "Calzados": {
+    "Chanclas": {
+      "brands": ["Adidas", "Nike", "Puma"],
+      "data": [200, 100, 500, 300]
+    },
+    "Zapatos": {
+      "brands": ["Christian Louboutin", "Jimmy Choo", "Aquazzura"],
+      "data": [312, 123, 432, 520]
+    },
+    "Plataformas": {
+      "brands": ["Gianvito Rossi", "Stuart Weitzman", "Charlotte Olympia"],
+      "data": [132, 312, 53, 80]
+    }
+  }
+}
