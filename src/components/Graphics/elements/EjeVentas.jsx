@@ -3,7 +3,6 @@ import Bars from "../atoms/Bars";
 
 const EjeVentas = ({ values }) => {
   const max = Math.max.apply(null, values);
-  console.log(max);
   const lenghtArr = max % 100 === 0 ? max / 100 + 1 : max / 100 + 2;
   const scale = Array.from({ length: lenghtArr }, (_, i) => i * 100);
 

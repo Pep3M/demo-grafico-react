@@ -50,7 +50,6 @@ const months = ["January", "February", "March", "April"];
 
 const Bars = ({ data, max }) => {
   const percent = (part) => (part / max) * 100;
-  console.log("percent", data[3], max, percent(data[3]));
   return (
     <div
       style={{
