@@ -1,15 +1,17 @@
 import React from "react";
 import Bars from "../atoms/Bars";
 
-const EjeVentas = () => {
-  const max = 900;
-  const scale = Array.from({ length: max / 100 + 1 }, (_, i) => i * 100);
+const EjeVentas = ({ values }) => {
+  const max = Math.max.apply(null, values);
+  console.log(max);
+  const lenghtArr = max % 100 === 0 ? max / 100 + 1 : max / 100 + 2;
+  const scale = Array.from({ length: lenghtArr }, (_, i) => i * 100);
 
   return (
     <div
       style={{
         width: "100%",
-        height: "80%",
+        height: "70%",
         display: "flex",
       }}
     >
@@ -49,6 +51,14 @@ const EjeVentas = () => {
           position: "relative",
         }}
       >
+        <p
+          style={{
+            fontSize: 20,
+            marginBottom: -60,
+          }}
+        >
+          Meses
+        </p>
         {scale.map((item) => (
           <div
             style={{
@@ -62,7 +72,7 @@ const EjeVentas = () => {
             key={item}
           />
         ))}
-        <Bars />
+        <Bars data={values} max={[...scale].pop()} />
       </div>
     </div>
   );
