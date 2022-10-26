@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Bar = (props) => {
-  const { name, percent, value } = props;
+  const { name, percent, value, exc = false } = props;
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const Bar = (props) => {
     <div
       style={{
         width: "100%",
-        height: "100%",
+        height: `calc(100% - ${exc ? "18px" : "1px"})`,
         display: "inherit",
         flexDirection: "column-reverse",
         justifyContent: "flex-start",
@@ -30,7 +30,7 @@ const Bar = (props) => {
       <div
         style={{
           width: "10vw",
-          height: `calc(${height}% - 18px)`,
+          height: `${height}%`,
           backgroundColor: "#88B3E7",
           marginBlock: 7,
           marginTop: 10,
@@ -70,6 +70,7 @@ const Bars = ({ data, max }) => {
           name={month}
           percent={percent(data[i])}
           value={data[i]}
+          exc={data[i] % 100 !== 0}
         />
       ))}
     </div>
