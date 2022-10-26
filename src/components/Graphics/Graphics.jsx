@@ -8,7 +8,7 @@ import Axios from "axios";
 const Graphics = () => {
   const [values, setValues] = useState([0]);
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState({});
+  const [data, setData] = useState("");
 
   const arr = (values) => {
     setValues(values);
@@ -55,7 +55,7 @@ const Graphics = () => {
             justifyContent: "center",
           }}
         >
-          <Listas data={json} values={arr} />
+          {data ? <Listas data={data} values={arr} /> : <></>}
           <div
             style={{
               width: "100%",
