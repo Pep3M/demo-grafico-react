@@ -55,6 +55,9 @@ const EjeVentas = ({ values }) => {
           style={{
             fontSize: 20,
             marginBottom: -60,
+            position: "absolute",
+            bottom: 0,
+            left: "50%",
           }}
         >
           Meses

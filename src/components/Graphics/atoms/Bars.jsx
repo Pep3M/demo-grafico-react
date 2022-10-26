@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Bar = (props) => {
-  const { name, percent } = props;
+  const { name, percent, value } = props;
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -35,8 +35,13 @@ const Bar = (props) => {
           marginBlock: 7,
           marginTop: 10,
           transition: "0.5s cubic-bezier(0,0,0,1)",
+          overflow: "hidden",
+          color: "white",
+          fontSize: 12,
         }}
-      />
+      >
+        {value}
+      </div>
     </div>
   );
 };
@@ -60,7 +65,12 @@ const Bars = ({ data, max }) => {
       }}
     >
       {months.map((month, i) => (
-        <Bar key={month} name={month} percent={percent(data[i])} />
+        <Bar
+          key={month}
+          name={month}
+          percent={percent(data[i])}
+          value={data[i]}
+        />
       ))}
     </div>
   );
